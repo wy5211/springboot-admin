@@ -1,0 +1,26 @@
+package com.example.demo.dto;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+@Data
+public class UserUpdateDTO {
+
+    @Size(min = 3, max = 50, message = "用户名长度为3-50个字符")
+    private String username;
+
+    @Size(min = 6, max = 50, message = "密码长度为6-50个字符")
+    private String password;
+
+    private String nickname;
+
+    @Email(message = "邮箱格式不正确")
+    private String email;
+
+    private String phone;
+
+    private Long deptId;
+
+    private Integer status;
+}
